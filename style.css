@@ -231,3 +231,62 @@ ul {
 ul li {
   margin-bottom: 10px;
 }
+
+.mascot {
+  position: fixed;
+  bottom: 20px;
+  right: -200px;
+
+  animation:
+    mascot-enter 2s forwards 2s,
+    mascot-float 2s infinite ease-in-out;
+
+  z-index: 999;
+}
+
+.mascot img {
+  width: 120px;
+  cursor: pointer;
+}
+
+.mascot-message {
+  position: absolute;
+  bottom: 130px;
+  right: 0;
+
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+
+  width: 200px;
+
+  opacity: 0;
+  transition: 0.3s;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.mascot:hover .mascot-message {
+  opacity: 1;
+}
+
+@keyframes mascot-enter {
+  from {
+    right: -200px;
+  }
+  to {
+    right: 20px;
+  }
+}
+
+@keyframes mascot-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
